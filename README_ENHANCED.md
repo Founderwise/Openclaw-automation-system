@@ -3,10 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14+-blue.svg)](https://www.python.org/downloads/)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.1.30-green.svg)](https://openclaw.ai)
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/FounderGeek/openclaw-automation-system/python-tests.yml?branch=main)](https://github.com/FounderGeek/openclaw-automation-system/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/FounderGeek/openclaw-automation-system)](https://codecov.io/gh/FounderGeek/openclaw-automation-system)
-[![Contributors](https://img.shields.io/github/contributors/FounderGeek/openclaw-automation-system)](https://github.com/FounderGeek/openclaw-automation-system/graphs/contributors)
-[![Last Commit](https://img.shields.io/github/last-commit/FounderGeek/openclaw-automation-system)](https://github.com/FounderGeek/openclaw-automation-system/commits/main)
 
 ## ✨ Complete AI Agent Automation Solution
 
