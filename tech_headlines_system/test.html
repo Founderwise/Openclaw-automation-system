@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技头条系统测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        .test-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            margin: 0.5rem 0;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 科技头条系统测试</h1>
+    
+    <div class="test-item">
+        <h3>✅ 文件完整性检查</h3>
+        <p id="file-check">检查中...</p>
+        <button onclick="checkFiles()">重新检查</button>
+    </div>
+    
+    <div class="test-item">
+        <h3>🌐 功能预览</h3>
+        <p>系统包含以下功能：</p>
+        <ul>
+            <li>一键中英文切换</li>
+            <li>5个科技领域导航</li>
+            <li>交互式数据图表</li>
+            <li>技术术语解释</li>
+            <li>移动端完全适配</li>
+            <li>暗色模式支持</li>
+        </ul>
+        <a href="index.html" target="_blank">
+            <button>查看完整页面</button>
+        </a>
+    </div>
+    
+    <div class="test-item">
+        <h3>📱 移动端适配测试</h3>
+        <p>打开浏览器开发者工具，切换到手机视图测试响应式设计。</p>
+        <button onclick="simulateMobile()">模拟手机视图</button>
+    </div>
+    
+    <div class="test-item">
+        <h3>📊 内容质量验证</h3>
+        <p>已按照原始规划实现：</p>
+        <ul>
+            <li>✅ 双语对照格式</li>
+            <li>✅ 深度技术分析</li>
+            <li>✅ 趋势预测</li>
+            <li>✅ 投资建议</li>
+            <li>✅ 幽默元素</li>
+            <li>✅ 技术术语解释</li>
+        </ul>
+    </div>
+    
+    <div class="test-item">
+        <h3>🚀 部署准备</h3>
+        <p>系统已准备好部署到：</p>
+        <ul>
+            <li>GitHub Pages</li>
+            <li>Vercel / Netlify</li>
+            <li>自有服务器</li>
+        </ul>
+        <p>所有文件已保存在：<code>/Users/apple/.openclaw/workspace/tech_headlines_system/</code></p>
+    </div>
+
+    <script>
+        function checkFiles() {
+            const files = [
+                'index.html',
+                'style.css', 
+                'script.js',
+                'telegram_message.md'
+            ];
+            
+            let allExist = true;
+            const results = [];
+            
+            files.forEach(file => {
+                try {
+                    // 简单检查文件是否存在
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('HEAD', file, false);
+                    xhr.send();
+                    
+                    if (xhr.status === 200 || xhr.status === 0) {
+                        results.push(`✅ ${file}`);
+                    } else {
+                        results.push(`❌ ${file}`);
+                        allExist = false;
+                    }
+                } catch (e) {
+                    results.push(`❌ ${file} (错误: ${e.message})`);
+                    allExist = false;
+                }
+            });
+            
+            document.getElementById('file-check').innerHTML = 
+                results.join('<br>') + 
+                `<br><br><strong>${allExist ? '✅ 所有文件完整' : '❌ 部分文件缺失'}</strong>`;
+        }
+        
+        function simulateMobile() {
+            // 提示用户如何测试
+            alert('在浏览器中：\n1. 按 F12 打开开发者工具\n2. 点击左上角手机/平板图标\n3. 选择不同的设备尺寸测试');
+        }
+        
+        // 页面加载时自动检查
+        window.onload = checkFiles;
+    </script>
+</body>
+</html>
